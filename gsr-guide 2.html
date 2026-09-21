@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A GSR's Guide to Being Heard in Area 53</title>
+<meta name="description" content="A plain-language guide for General Service Representatives on how Area 53 does business.">
+<style>
+  :root{
+    /* Area 53 AA site palette: deep navy, teal gradient, signature red, light background */
+    --paper:#f7fbfd;
+    --paper-alt:#eaf5f8;
+    --ink:#0d2436;
+    --ink-soft:#4d6577;
+    --accent:#d62828;
+    --accent-soft:#e2665a;
+    --navy:#0d2436;
+    --navy-soft:#173347;
+    --teal:#0e7690;
+    --teal-bright:#1cb5e0;
+    --line:#d7e6ec;
+    --card:#ffffff;
+    --highlight:#e3f3f7;
+    --focus:#1cb5e0;
+    --shadow: 0 1px 3px rgba(13,36,54,0.08), 0 4px 14px rgba(13,36,54,0.07);
+    --radius: 14px;
+    --serif: "EB Garamond", Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#0a1620;
+      --paper-alt:#0f2130;
+      --ink:#e9f3f7;
+      --ink-soft:#9db4c2;
+      --accent:#ff5a4d;
+      --accent-soft:#e2665a;
+      --navy:#0d2436;
+      --navy-soft:#122b3e;
+      --teal:#3bc7e8;
+      --teal-bright:#1cb5e0;
+      --line:#1c3548;
+      --card:#0f202e;
+      --highlight:#123244;
+      --focus:#3bc7e8;
+      --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 4px 18px rgba(0,0,0,0.35);
+    }
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:4rem;
+  }
+
+  a{color:var(--accent);}
+  a:focus-visible, button:focus-visible, summary:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:2px;
+  }
+
+  .skip-link{
+    position:absolute; left:-999px; top:0; background:var(--card); color:var(--ink);
+    padding:0.6rem 1rem; border-radius:0 0 8px 0; z-index:100;
+  }
+  .skip-link:focus{ left:0; }
+
+  header.hero{
+    padding:3.2rem 1.25rem 2.7rem;
+    text-align:center;
+    background:
+      linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 45%, var(--teal) 100%);
+    border-bottom:3px solid var(--accent);
+  }
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:0.75rem;
+    color:#fff;
+    opacity:0.85;
+    font-weight:700;
+    margin:0 0 0.75rem;
+  }
+  h1.title{
+    font-family:var(--serif);
+    font-size:clamp(1.9rem, 5vw, 2.9rem);
+    margin:0 0 0.5rem;
+    font-style:italic;
+    line-height:1.2;
+    color:#ffffff;
+  }
+  .subtitle{
+    color:#dff2f7;
+    font-size:1rem;
+    max-width:34rem;
+    margin:0 auto;
+  }
+
+  nav.progress-wrap{
+    position:sticky; top:0; z-index:50;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .progress-track{ height:3px; background:var(--line); }
+  .progress-bar{ height:100%; width:0%; background:linear-gradient(90deg, var(--teal), var(--accent)); transition:width 0.1s linear; }
+
+  .toc-bar{
+    display:flex; align-items:center; gap:0.6rem;
+    padding:0.6rem 1rem;
+    max-width:56rem; margin:0 auto;
+  }
+  .toc-bar select{
+    flex:1;
+    font-family:var(--sans);
+    font-size:0.9rem;
+    padding:0.55rem 0.7rem;
+    border-radius:10px;
+    border:1px solid var(--line);
+    background:var(--card);
+    color:var(--ink);
+  }
+  .icon-btn{
+    border:1px solid var(--line);
+    background:var(--card);
+    color:var(--ink);
+    border-radius:10px;
+    padding:0.55rem 0.7rem;
+    font-size:0.85rem;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .icon-btn:hover{ border-color:var(--accent-soft); color:var(--accent); }
+
+  main{
+    max-width:44rem;
+    margin:0 auto;
+    padding:2rem 1.25rem 0;
+  }
+
+  .whats-inside{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:1.25rem 1.4rem;
+    margin-bottom:2rem;
+    box-shadow:var(--shadow);
+  }
+  .whats-inside h2{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.2rem;
+    margin:0 0 0.75rem;
+    color:var(--navy);
+  }
+  .whats-inside ol{
+    margin:0; padding-left:1.2rem;
+    columns:1;
+  }
+  .whats-inside li{ margin-bottom:0.4rem; }
+  .whats-inside a{ text-decoration:none; }
+  .whats-inside a:hover{ text-decoration:underline; }
+
+  section.chapter{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    margin-bottom:1.1rem;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    scroll-margin-top:5.5rem;
+  }
+  section.chapter > summary{
+    list-style:none;
+    cursor:pointer;
+    padding:1.1rem 1.3rem;
+    display:flex;
+    align-items:center;
+    gap:0.8rem;
+    font-weight:600;
+    font-size:1.05rem;
+  }
+  section.chapter > summary::-webkit-details-marker{ display:none; }
+  .chap-num{
+    flex-shrink:0;
+    width:2.1rem; height:2.1rem;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1rem;
+  }
+  .chap-title{ flex:1; }
+  .chevron{
+    transition:transform 0.2s ease;
+    color:var(--ink-soft);
+    flex-shrink:0;
+  }
+  section.chapter[open] .chevron{ transform:rotate(180deg); }
+
+  .chapter-body{
+    padding:0 1.3rem 1.4rem;
+    border-top:1px solid var(--line);
+  }
+  .chapter-body > *:first-child{ margin-top:1.1rem; }
+
+  .chapter-body p{ margin:0 0 1rem; }
+  .chapter-body ul, .chapter-body ol{ margin:0 0 1rem; padding-left:1.3rem; }
+  .chapter-body li{ margin-bottom:0.5rem; }
+  .chapter-body h3{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.15rem;
+    margin:1.4rem 0 0.6rem;
+    color:var(--teal);
+  }
+
+  blockquote.principle{
+    margin:0 0 1rem;
+    padding:0.8rem 1rem;
+    background:var(--paper-alt);
+    border-left:3px solid var(--teal);
+    border-radius:0 8px 8px 0;
+    font-family:var(--serif);
+    font-style:italic;
+  }
+  blockquote.principle b{ font-style:normal; }
+
+  .badge{
+    display:inline-block;
+    font-size:0.72rem;
+    font-weight:700;
+    letter-spacing:0.03em;
+    padding:0.15rem 0.5rem;
+    border-radius:999px;
+    background:var(--accent);
+    color:#fff;
+    margin-left:0.4rem;
+  }
+
+  /* Motions reference cards */
+  .motion-search{
+    display:flex; gap:0.5rem; margin-bottom:1rem;
+  }
+  .motion-search input{
+    flex:1;
+    font-family:var(--sans);
+    font-size:0.95rem;
+    padding:0.6rem 0.8rem;
+    border-radius:10px;
+    border:1px solid var(--line);
+    background:var(--paper);
+    color:var(--ink);
+  }
+  .motion-card{
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:0.9rem 1rem;
+    margin-bottom:0.7rem;
+    background:var(--paper);
+  }
+  .motion-card .goal{
+    font-weight:700;
+    margin-bottom:0.3rem;
+  }
+  .motion-card .say{
+    font-family:var(--serif);
+    font-style:italic;
+    color:var(--teal);
+    margin-bottom:0.5rem;
+  }
+  .motion-meta .vote-strong{
+    color:var(--accent);
+    font-weight:700;
+  }
+  .motion-meta{
+    display:flex; flex-wrap:wrap; gap:0.4rem 1rem;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+  .motion-meta span b{ color:var(--ink); }
+  .motion-card.hidden{ display:none; }
+  .no-results{
+    display:none;
+    color:var(--ink-soft);
+    font-style:italic;
+    padding:0.5rem 0;
+  }
+  .no-results.show{ display:block; }
+
+  /* Path picker (section 3) */
+  .path-toggle{
+    display:flex; gap:0.5rem; margin-bottom:1rem; flex-wrap:wrap;
+  }
+  .path-toggle button{
+    flex:1 1 auto;
+    min-width:9rem;
+    border:1px solid var(--line);
+    background:var(--paper);
+    color:var(--ink);
+    padding:0.65rem 0.8rem;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:0.9rem;
+    font-weight:600;
+  }
+  .path-toggle button[aria-pressed="true"]{
+    background:var(--navy);
+    border-color:var(--navy);
+    color:#fff;
+  }
+  .path-panel{ display:none; }
+  .path-panel.active{ display:block; }
+  .steps{ counter-reset:step; list-style:none; padding-left:0; }
+  .steps li{
+    counter-increment:step;
+    position:relative;
+    padding-left:2.4rem;
+    margin-bottom:0.9rem;
+  }
+  .steps li::before{
+    content:counter(step);
+    position:absolute; left:0; top:0;
+    width:1.7rem; height:1.7rem;
+    background:var(--teal);
+    color:#fff;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700;
+    font-size:0.85rem;
+  }
+
+  /* Motion writer worksheet */
+  .worksheet{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:1rem;
+  }
+  .field{ margin-bottom:1rem; }
+  .field label{
+    display:block;
+    font-weight:700;
+    font-size:0.85rem;
+    margin-bottom:0.35rem;
+    color:var(--teal);
+  }
+  .field textarea, .field input[type=text]{
+    width:100%;
+    font-family:var(--sans);
+    font-size:0.95rem;
+    padding:0.6rem 0.7rem;
+    border-radius:8px;
+    border:1px solid var(--line);
+    background:var(--card);
+    color:var(--ink);
+    resize:vertical;
+  }
+  .field textarea{ min-height:3rem; }
+  .worksheet-actions{
+    display:flex; gap:0.6rem; flex-wrap:wrap;
+    margin-top:0.5rem;
+  }
+  .worksheet-actions #buildMotionBtn{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:#fff;
+    font-weight:700;
+  }
+  .worksheet-actions #buildMotionBtn:hover{
+    background:var(--accent-soft);
+    border-color:var(--accent-soft);
+    color:#fff;
+  }
+  .worksheet-preview{
+    margin-top:1rem;
+    padding:1rem;
+    border-radius:8px;
+    background:var(--card);
+    border:1px dashed var(--teal);
+    font-family:var(--serif);
+    white-space:pre-wrap;
+    font-size:0.98rem;
+    line-height:1.7;
+  }
+  .save-note{
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    margin-top:0.5rem;
+  }
+
+  /* Minority opinion flow */
+  .flow{
+    display:flex; flex-direction:column; gap:0;
+    margin:1rem 0;
+  }
+  .flow-step{
+    border:1px solid var(--line);
+    background:var(--paper);
+    border-radius:10px;
+    padding:0.85rem 1rem;
+    position:relative;
+  }
+  .flow-arrow{
+    text-align:center;
+    color:var(--accent-soft);
+    font-size:1.2rem;
+    padding:0.15rem 0;
+  }
+  .flow-step .who{
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--teal);
+    font-weight:700;
+    margin-bottom:0.25rem;
+  }
+  .flow-step{ border-left:3px solid var(--teal); }
+
+  footer{
+    max-width:44rem;
+    margin:2rem auto 0;
+    padding:0 1.25rem;
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:0.85rem;
+  }
+  footer .closing{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.1rem;
+    color:var(--ink);
+    margin-bottom:1rem;
+    line-height:1.7;
+  }
+
+  .back-to-top{
+    display:inline-block;
+    margin-top:1rem;
+    text-decoration:none;
+    color:var(--teal);
+    font-size:0.85rem;
+    font-weight:600;
+  }
+
+  @media (max-width:480px){
+    .toc-bar{ flex-wrap:wrap; }
+    header.hero{ padding:2.2rem 1rem 1.8rem; }
+  }
+
+  @media print{
+    nav.progress-wrap, .toc-bar, .path-toggle, .motion-search, .worksheet-actions{ display:none !important; }
+    section.chapter{ box-shadow:none; border:none; }
+    .chapter-body{ display:block !important; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav class="progress-wrap" aria-label="Reading progress and navigation">
+  <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="toc-bar">
+    <select id="tocSelect" aria-label="Jump to section">
+      <option value="">Jump to section…</option>
+      <option value="word-from-chair">A Word From Your Chairperson</option>
+      <option value="ch1">1. Why We Do Business This Way</option>
+      <option value="ch2">2. Who Holds the Authority?</option>
+      <option value="ch3">3. Getting Your Idea to the Floor</option>
+      <option value="ch4">4. Plain-Language Motions</option>
+      <option value="ch5">5. Substantial Unanimity</option>
+      <option value="ch6">6. Writing Up a Motion</option>
+      <option value="closing">A Closing Word</option>
+    </select>
+    <button class="icon-btn" id="expandAllBtn" type="button">Expand all</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow">Area 53 &middot; General Service</p>
+  <h1 class="title">A GSR's Guide to Being Heard in Area 53</h1>
+  <p class="subtitle">From the Area 53 Chairperson — for General Service Representatives, new and experienced</p>
+</header>
+
+<main id="main-content">
+
+  <div class="whats-inside">
+    <h2>What's Inside</h2>
+    <ol>
+      <li><a href="#word-from-chair">A Word From Your Chairperson</a></li>
+      <li><a href="#ch1">Why We Do Business This Way</a></li>
+      <li><a href="#ch2">Who Holds the Authority — Committee or Assembly?</a></li>
+      <li><a href="#ch3">Getting Your Group's Idea to the Assembly Floor</a></li>
+      <li><a href="#ch4">Plain-Language Motions: A Quick Reference</a></li>
+      <li><a href="#ch5">Substantial Unanimity &amp; the Minority Opinion</a></li>
+      <li><a href="#ch6">Writing Up a Motion</a></li>
+      <li><a href="#closing">A Closing Word</a></li>
+    </ol>
+  </div>
+
+  <section class="chapter" id="word-from-chair" open>
+    <summary>
+      <span class="chap-num">&#9733;</span>
+      <span class="chap-title">A Word From Your Chairperson</span>
+      <span class="chevron">&#9660;</span>
+    </summary>
+    <div class="chapter-body">
+      <p>Welcome to general service. As a GSR, you carry your group's voice into the Area — and that's no small thing. Our structure runs upside down from most organizations: the groups hold the final authority, and the Assembly exists to serve you, not the other way around (Tradition Two; Concept I).</p>
+      <p>This guide is meant to take the mystery out of Assembly business — how an idea gets onto the agenda, how a motion is made, and how we listen to one another, even in disagreement. None of it is complicated once you've seen it done a time or two. My hope is that reading through it once will make you comfortable enough to stand up at the microphone the next time something matters to you and your group.</p>
+      <p>In love and service,<br>Your Area 53 Chairperson</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch1">
+    <summary>
+      <span class="chap-num">1</span>
+      <span class="chap-title">Why We Do Business This Way</span>
+      <span class="chevron">&#9660;</span>
+    </summary>
+    <div class="chapter-body">
+      <p>In A.A., a business meeting is still a spiritual gathering. Parliamentary procedure isn't a contest of rules — it's a trusted servant in its own right, there to keep things orderly, fair, and unhurried enough that everyone gets heard.</p>
+      <h3>A few principles underneath all of it</h3>
+      <blockquote class="principle"><b>Tradition Two:</b> "For our group purpose there is but one ultimate authority — a loving God as He may express Himself in our group conscience. Our leaders are but trusted servants; they do not govern."</blockquote>
+      <blockquote class="principle"><b>Concepts I &amp; II:</b> Final responsibility and the ultimate authority for A.A. world services belongs to the groups — and that authority flows through the Conference, right down to our Area Assembly.</blockquote>
+      <blockquote class="principle"><b>Concept IV — Right of Participation:</b> Every voting member, especially each GSR, has an equal right to speak, vote, and be heard.</blockquote>
+      <blockquote class="principle"><b>Concept XII, Warranty Four:</b> "That all important decisions be reached by discussion, vote, and, whenever possible, by substantial unanimity."</blockquote>
+      <blockquote class="principle"><b>Concept XII, Warranty Five:</b> "That no Conference [or Assembly] action ever be personally punitive or an incitement to public controversy."</blockquote>
+      <p><em>Source: The A.A. Service Manual combined with Twelve Concepts for World Service.</em></p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch2">
+    <summary>
+      <span class="chap-num">2</span>
+      <span class="chap-title">Who Holds the Authority?</span>
+      <span class="chevron">&#9660;</span>
+    </summary>
+    <div class="chapter-body">
+      <p>A frequent point of confusion is who actually governs in Area 53. Simply put:</p>
+      <ul>
+        <li><b>The Area Assembly holds ultimate authority.</b> Made up of GSRs, DCMs, Officers, and Standing Committee Chairs, the Assembly is our final group conscience. It elects officers, approves guidelines, passes the budget, and decides broad policy.</li>
+        <li><b>The Area Committee serves the Assembly.</b> Between Assemblies, the Committee (Officers, Standing Chairs, and DCMs) coordinates administration, hears progress reports, and helps the Area Chair prepare the Assembly agenda (Area 53 Guidelines, Article VII).</li>
+        <li><b>The Area Committee does not govern the Assembly.</b> It cannot veto business, change guidelines, or substitute its judgment for the full Assembly's conscience. GSRs hold the majority of votes in the Assembly — you are the voice of A.A. in Central and Southeastern Ohio.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch3">
+    <summary>
+      <span class="chap-num">3</span>
+      <span class="chap-title">Getting Your Idea to the Floor</span>
+      <span class="chevron">&#9660;</span>
+    </summary>
+    <div class="chapter-body">
+      <p>The Area Assembly agenda is prepared by the Area Chairperson with the Area Committee and sent to all members at least one month before the Assembly meets (Area 53 Guidelines, Article VI §3).</p>
+
+      <div class="path-toggle" role="tablist" aria-label="Choose your situation">
+        <button type="button" role="tab" aria-pressed="true" data-path="district">My district has a DCM</button>
+        <button type="button" role="tab" aria-pressed="false" data-path="nodcm">No active DCM</button>
+        <button type="button" role="tab" aria-pressed="false" data-path="floor">It's Assembly day already</button>
+      </div>
+
+      <div class="path-panel active" data-panel="district">
+        <h3>The usual way: through your district</h3>
+        <ol class="steps">
+          <li>Bring your idea or motion to your home group for a group conscience.</li>
+          <li>Share it with your District Committee Member (DCM) at your monthly District meeting.</li>
+          <li>Your DCM carries it to the Area Committee meeting for a spot on the upcoming Assembly agenda.</li>
+        </ol>
+      </div>
+
+      <div class="path-panel" data-panel="nodcm">
+        <h3>If your district has no active DCM</h3>
+        <p>An unrepresented or inactive district doesn't mean your group goes unheard. You can:</p>
+        <ul>
+          <li>Write to the Area Chairperson or Area Secretary directly, with your motion and some background, well before the Area Committee meets.</li>
+          <li>Reach out to the DCM Chairperson (DCMC), who represents districts on the Area Committee and helps unrepresented ones move business forward.</li>
+          <li>Connect with Group Services or a Standing Committee — if your item touches Treatment, Corrections, Accessibilities, PI/CPC, or Website/Tech, that chair can help introduce it during agenda planning.</li>
+        </ul>
+      </div>
+
+      <div class="path-panel" data-panel="floor">
+        <h3>From the floor, on Assembly day</h3>
+        <p>Missed the one-month notice? You still have options under parliamentary procedure:</p>
+        <ul>
+          <li><b>Amend the agenda:</b> when the Chair presents the draft agenda for adoption, rise and move, "I move to amend the agenda to add [topic] under New Business." (Needs a second, is debatable, 2/3 majority.)</li>
+          <li><b>Make a motion under New Business:</b> once the Assembly reaches New Business on the adopted agenda, any voting GSR may stand and offer an original main motion.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch4">
+    <summary>
+      <span class="chap-num">4</span>
+      <span class="chap-title">Plain-Language Motions</span>
+      <span class="chevron">&#9660;</span>
+    </summary>
+    <div class="chapter-body">
+      <p>Area 53 uses a simplified version of Robert's Rules, in the same spirit as the General Service Conference's own practice (Service Manual, Appendix W). Search or scan below for the most common situations:</p>
+
+      <div class="motion-search">
+        <input type="text" id="motionFilter" placeholder="Search, e.g. &quot;table&quot;, &quot;amend&quot;, &quot;committee&quot;…" aria-label="Filter motions">
+      </div>
+
+      <div id="motionList">
+        <div class="motion-card" data-text="introduce new action or policy move that two-thirds yes yes">
+          <div class="goal">Introduce a new action or policy</div>
+          <div class="say">"I move that [exact action]..."</div>
+          <div class="motion-meta">
+            <span><b>Second?</b> Yes</span>
+            <span><b>Debatable?</b> Yes</span>
+            <span><b>Vote needed:</b> <span class="vote-strong">Two-thirds*</span></span>
+          </div>
+        </div>
+        <div class="motion-card" data-text="change wording of motion on floor amend adding striking yes yes two-thirds">
+          <div class="goal">Change the wording of a motion on the floor</div>
+          <div class="say">"I move to amend the motion by adding/striking..."</div>
+          <div class="motion-meta">
+            <span><b>Second?</b> Yes</span>
+            <span><b>Debatable?</b> Yes</span>
+            <span><b>Vote needed:</b> <span class="vote-strong">Two-thirds</span></span>
+          </div>
+        </div>
+        <div class="motion-card" data-text="give gsrs time check with groups table motion next assembly yes no two-thirds">
+          <div class="goal">Give GSRs time to check with their groups</div>
+          <div class="say">"I move to table the motion until next Assembly"</div>
+          <div class="motion-meta">
+            <span><b>Second?</b> Yes</span>
+            <span><b>Debatable?</b> No</span>
+            <span><b>Vote needed:</b> <span class="vote-strong">Two-thirds</span></span>
+          </div>
+        </div>
+        <div class="motion-card" data-text="send idea to committee for more work refer yes yes majority">
+          <div class="goal">Send an idea to a committee for more work</div>
+          <div class="say">"I move to refer to [committee]"</div>
+          <div class="motion-meta">
+            <span><b>Second?</b> Yes</span>
+            <span><b>Debatable?</b> Yes</span>
+            <span><b>Vote needed:</b> Majority</span>
+          </div>
+        </div>
+        <div class="motion-card" data-text="end debate vote right away call the question two-thirds recognized">
+          <div class="goal">End debate and vote right away</div>
+          <div class="say">"I call the question" (must be recognized first — you cannot speak, then call it)</div>
+          <div class="motion-meta">
+            <span><b>Second?</b> Yes</span>
+            <span><b>Debatable?</b> No</span>
+            <span><b>Vote needed:</b> <span class="vote-strong">Two-thirds</span></span>
+          </div>
+        </div>
+        <div class="motion-card" data-text="ask clarifying or procedural question point of order point of information chair decides no second">
+          <div class="goal">Ask a clarifying or procedural question</div>
+          <div class="say">"Point of Order" or "Point of Information"</div>
+          <div class="motion-meta">
+            <span><b>Second?</b> No</span>
+            <span><b>Debatable?</b> No</span>
+            <span><b>Vote needed:</b> Chair decides</span>
+          </div>
+        </div>
+      </div>
+      <p class="no-results" id="motionNoResults">No matches — try a different word, or check with your Chair.</p>
+
+      <p style="margin-top:1rem;"><em>*Two-thirds majority is Area 53's everyday practice for ordinary business. A two-thirds vote is also required to amend the Area 53 Guidelines themselves (Article XIV) and for budget items over $300 that need full Assembly approval. If you're not sure which threshold applies to a particular motion, ask your Chair or the Guidelines Committee before the vote — don't guess at the mic.</em></p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch5">
+    <summary>
+      <span class="chap-num">5</span>
+      <span class="chap-title">Substantial Unanimity</span>
+      <span class="chevron">&#9660;</span>
+    </summary>
+    <div class="chapter-body">
+      <p>Unlike a political body where 51% carries the day, A.A. strives for substantial unanimity — a two-thirds vote, creating harmony and consensus, not a bare win. This is also where we make room to hear from members who voted "no," even after the gavel falls.</p>
+
+      <h3>Hearing the minority</h3>
+      <div class="flow">
+        <div class="flow-step"><div class="who">Chair</div>After a vote is tallied — whichever way it went — asks: "Does anyone who voted on the minority side wish to speak?"</div>
+        <div class="flow-arrow">&#8595;</div>
+        <div class="flow-step"><div class="who">Minority side only</div>Members who voted with the minority may share their reasons.</div>
+        <div class="flow-arrow">&#8595;</div>
+        <div class="flow-step"><div class="who">Whole assembly</div>No debate follows. The Assembly simply listens, in silence, to be sure no viewpoint got overlooked.</div>
+      </div>
+
+      <h3>Motion to reconsider</h3>
+      <div class="flow">
+        <div class="flow-step"><div class="who">Chair</div>After the minority is heard, asks: "Does anyone who voted on the prevailing side wish to move to reconsider?"</div>
+        <div class="flow-arrow">&#8595;</div>
+        <div class="flow-step"><div class="who">Prevailing side only</div>Only someone persuaded by what the minority said may make this motion.</div>
+        <div class="flow-arrow">&#8595;</div>
+        <div class="flow-step"><div class="who">If seconded</div>A simple majority reopens debate. If that passes, the floor is open again before a final vote.</div>
+      </div>
+
+      <p style="margin-top:1rem;">This mirrors how the General Service Conference itself handles minority opinion (Service Manual, Appendix W, and Concept V). Area 53's own Guidelines call for a two-thirds vote specifically to amend the Guidelines (Article XIV); for everything else, check with your Chair on what threshold your Assembly has adopted.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="ch6">
+    <summary>
+      <span class="chap-num">6</span>
+      <span class="chap-title">Writing Up a Motion</span>
+      <span class="chevron">&#9660;</span>
+    </summary>
+    <div class="chapter-body">
+      <p>When you're ready to present a motion, write it out ahead of time so the Chair can display it and GSRs can carry it back to their groups accurately. Try it below — this fills in a plain-language template you can copy and bring with you (nothing you type here leaves your device).</p>
+
+      <div class="worksheet">
+        <div class="field">
+          <label for="mTitle">Title / Topic</label>
+          <input type="text" id="mTitle" placeholder="Brief, clear name">
+        </div>
+        <div class="field">
+          <label for="mAction">The Motion — exact action</label>
+          <textarea id="mAction" placeholder="e.g., fund a new Accessibilities pamphlet"></textarea>
+        </div>
+        <div class="field">
+          <label for="mAmount">Amount (or $0)</label>
+          <input type="text" id="mAmount" placeholder="$0">
+        </div>
+        <div class="field">
+          <label for="mCoord">Coordinated by</label>
+          <input type="text" id="mCoord" placeholder="committee / officer">
+        </div>
+        <div class="field">
+          <label for="mDate">Effective date</label>
+          <input type="text" id="mDate" placeholder="e.g., upon passage">
+        </div>
+        <div class="field">
+          <label for="mIntent">Intent / Purpose</label>
+          <textarea id="mIntent" placeholder="One or two sentences on why this is needed"></textarea>
+        </div>
+        <div class="field">
+          <label for="mBackground">Background &amp; Context</label>
+          <textarea id="mBackground" placeholder="Group conscience, research, or need that led here"></textarea>
+        </div>
+        <div class="field">
+          <label for="mFinancial">Financial Impact</label>
+          <input type="text" id="mFinancial" placeholder="Cost estimate, or None / $0">
+        </div>
+        <div class="worksheet-actions">
+          <button class="icon-btn" id="buildMotionBtn" type="button">Build my motion</button>
+          <button class="icon-btn" id="copyMotionBtn" type="button">Copy text</button>
+          <button class="icon-btn" id="clearMotionBtn" type="button">Clear</button>
+        </div>
+        <div class="worksheet-preview" id="motionPreview">Fill in the fields above, then select "Build my motion."</div>
+        <p class="save-note">This worksheet lives only in your browser tab — it isn't saved or sent anywhere, and it clears on reload.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="closing">
+    <summary>
+      <span class="chap-num">&#10022;</span>
+      <span class="chap-title">A Closing Word</span>
+      <span class="chevron">&#9660;</span>
+    </summary>
+    <div class="chapter-body">
+      <p>Never hesitate to step to the microphone. Whether you're a first-time GSR or a seasoned trusted servant, your voice carries the heartbeat of your group into Area 53. When we practice open discussion, patience, and love for the Fellowship, our better judgment — call it group conscience, call it something greater — has room to speak through us.</p>
+      <p>This guide is offered as a helpful reference from the Chairperson's desk, not as Area 53 policy. Where it touches procedure that isn't spelled out in the Area 53 Guidelines or the A.A. Service Manual, please check with the Chairperson, Delegate, or the relevant committee rather than relying on this alone — and any wording changes to this guide belong to the group conscience of those who use it.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <a href="#top" class="back-to-top" id="topLink">&#8593; Back to top</a>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  // Reading progress bar
+  var bar = document.getElementById('progressBar');
+  function updateProgress(){
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var height = (doc.scrollHeight - doc.clientHeight) || 1;
+    var pct = Math.min(100, Math.max(0, (scrollTop / height) * 100));
+    bar.style.width = pct + '%';
+  }
+  document.addEventListener('scroll', updateProgress, {passive:true});
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+
+  // TOC jump
+  var tocSelect = document.getElementById('tocSelect');
+  tocSelect.addEventListener('change', function(){
+    var id = this.value;
+    if(!id) return;
+    var el = document.getElementById(id);
+    if(el){
+      if(el.tagName.toLowerCase() === 'details') el.open = true;
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+    this.value = '';
+  });
+
+  // Expand / collapse all
+  var expandBtn = document.getElementById('expandAllBtn');
+  var expanded = false;
+  expandBtn.addEventListener('click', function(){
+    expanded = !expanded;
+    document.querySelectorAll('section.chapter').forEach(function(d){ d.open = expanded; });
+    expandBtn.textContent = expanded ? 'Collapse all' : 'Expand all';
+  });
+
+  // Path toggle (section 3)
+  var pathButtons = document.querySelectorAll('.path-toggle button');
+  pathButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = btn.getAttribute('data-path');
+      pathButtons.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      document.querySelectorAll('.path-panel').forEach(function(p){
+        p.classList.toggle('active', p.getAttribute('data-panel') === target);
+      });
+    });
+  });
+
+  // Motion search/filter
+  var filterInput = document.getElementById('motionFilter');
+  var motionCards = document.querySelectorAll('.motion-card');
+  var noResults = document.getElementById('motionNoResults');
+  filterInput.addEventListener('input', function(){
+    var q = this.value.trim().toLowerCase();
+    var anyVisible = false;
+    motionCards.forEach(function(card){
+      var haystack = (card.getAttribute('data-text') + ' ' + card.textContent).toLowerCase();
+      var match = haystack.indexOf(q) !== -1;
+      card.classList.toggle('hidden', !match);
+      if(match) anyVisible = true;
+    });
+    noResults.classList.toggle('show', !anyVisible);
+  });
+
+  // Motion worksheet
+  var preview = document.getElementById('motionPreview');
+  function buildMotion(){
+    var title = document.getElementById('mTitle').value.trim() || '[Untitled motion]';
+    var action = document.getElementById('mAction').value.trim() || '[exact action to take]';
+    var amount = document.getElementById('mAmount').value.trim() || '$0';
+    var coord = document.getElementById('mCoord').value.trim() || '[committee/officer]';
+    var date = document.getElementById('mDate').value.trim() || '[date]';
+    var intent = document.getElementById('mIntent').value.trim() || '[why this is needed]';
+    var background = document.getElementById('mBackground').value.trim() || '[group conscience, research, or need]';
+    var financial = document.getElementById('mFinancial').value.trim() || 'None / $0';
+
+    var text =
+      'TITLE / TOPIC\n' + title + '\n\n' +
+      'THE MOTION\n' +
+      '"That Area 53 ' + action + ', not to exceed ' + amount + ', coordinated by ' + coord + ', effective ' + date + '."\n\n' +
+      'INTENT / PURPOSE\n' + intent + '\n\n' +
+      'BACKGROUND & CONTEXT\n' + background + '\n\n' +
+      'FINANCIAL IMPACT\n' + financial;
+
+    preview.textContent = text;
+    return text;
+  }
+  document.getElementById('buildMotionBtn').addEventListener('click', buildMotion);
+  document.getElementById('clearMotionBtn').addEventListener('click', function(){
+    ['mTitle','mAction','mAmount','mCoord','mDate','mIntent','mBackground','mFinancial'].forEach(function(id){
+      document.getElementById(id).value = '';
+    });
+    preview.textContent = 'Fill in the fields above, then select "Build my motion."';
+  });
+  document.getElementById('copyMotionBtn').addEventListener('click', function(){
+    var text = buildMotion();
+    var btn = this;
+    var done = function(label){
+      var original = btn.textContent;
+      btn.textContent = label;
+      setTimeout(function(){ btn.textContent = original; }, 1600);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){ done('Copied!'); }).catch(function(){ done('Copy failed'); });
+    } else {
+      try{
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        done('Copied!');
+      }catch(e){ done('Copy failed'); }
+    }
+  });
+
+  // Smooth-open target section on direct link load (e.g. #ch3)
+  if(location.hash){
+    var target = document.querySelector(location.hash);
+    if(target && target.tagName.toLowerCase() === 'section'){
+      target.open = true;
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
